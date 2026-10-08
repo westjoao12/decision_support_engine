@@ -15,8 +15,8 @@ class SpreadsheetParser:
             return []
         try:
             df = pd.read_csv(file_path, sep=sep, encoding=encoding)
-            # Substitui valores NaN (Not a Number) por None para compatibilidade JSON/Pydantic
-            df = df.where(pd.notnull(df), None)
+            # Método mais seguro no Pandas 3+ para converter valores nulos em None (evita erros de JSON)
+            df = df.where(pd.notna(df), None)
             return df.to_dict(orient="records")
         except Exception as e:
             logger.error(f"Erro ao ler CSV {file_path}: {str(e)}")
@@ -24,12 +24,12 @@ class SpreadsheetParser:
 
     @staticmethod
     def read_excel(file_path: Path, sheet_name: int | str = 0, header: int = 4) -> List[Dict[str, Any]]:
-        # header=4 significa que o pandas ignora as 4 primeiras linhas e usa a linha 5 como cabeçalho
         if not file_path.exists() or file_path.suffix.lower() not in ['.xlsx', '.xls']:
             return []
         try:
             df = pd.read_excel(file_path, sheet_name=sheet_name, header=header)
-            df = df.where(pd.notnull(df), None)
+            # Mesma proteção para valores nulos no Excel
+            df = df.where(pd.notna(df), None)
             return df.to_dict(orient="records")
         except Exception as e:
             logger.error(f"Erro ao ler Excel {file_path}: {str(e)}")
