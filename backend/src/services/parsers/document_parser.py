@@ -1,7 +1,7 @@
 import pdfplumber
 from pathlib import Path
 import logging
-from backend.src.core.exceptions import DataIngestionError
+from src.core.exceptions import DataIngestionError
 
 logger = logging.getLogger(__name__)
 

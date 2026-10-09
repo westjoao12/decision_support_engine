@@ -1,8 +1,8 @@
 import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.src.api.routes import router
-from backend.src.core.config import settings
+from src.api.routes import router
+from src.core.config import settings
 
 # Configuração global de logs para monitorização
 logging.basicConfig(

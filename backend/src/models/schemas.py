@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
-from backend.src.models.enums import ProjectClassification, CriteriaState
+from src.models.enums import ProjectClassification, CriteriaState
 
 # --- 1. Schemas de Ingestão (O que o Frontend envia) ---
 

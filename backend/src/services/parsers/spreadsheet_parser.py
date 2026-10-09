@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from typing import Dict, Any, List
 import logging
-from backend.src.core.exceptions import DataIngestionError
+from src.core.exceptions import DataIngestionError
 
 logger = logging.getLogger(__name__)
 

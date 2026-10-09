@@ -4,8 +4,8 @@ import logging
 from pathlib import Path
 from typing import Dict, Any
 from fastapi import APIRouter, BackgroundTasks, HTTPException, status
-from backend.src.models.schemas import BatchProcessRequest, JobStatusResponse, BatchAnalysisResult
-from backend.src.services.analyzer import FrascatiEngine
+from src.models.schemas import BatchProcessRequest, JobStatusResponse, BatchAnalysisResult
+from src.services.analyzer import FrascatiEngine
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
