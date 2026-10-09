@@ -2,10 +2,10 @@ import json
 import logging
 from pathlib import Path
 from pydantic import ValidationError
-from src.services.parsers.dossier_assembler import DossierAssembler
-from src.services.llm_client import LLMClient
-from src.models.schemas import AnalysisResult
-from src.core.exceptions import EngineProcessingError, LLMValidationError
+from backend.src.services.parsers.dossier_assembler import DossierAssembler
+from backend.src.services.llm_client import LLMClient
+from backend.src.models.schemas import AnalysisResult
+from backend.src.core.exceptions import EngineProcessingError, LLMValidationError
 
 logger = logging.getLogger(__name__)
 

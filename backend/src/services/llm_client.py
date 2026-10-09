@@ -2,8 +2,8 @@ import json
 import httpx
 import logging
 from typing import Dict, Any
-from src.core.config import settings
-from src.core.exceptions import LLMValidationError, EngineProcessingError
+from backend.src.core.config import settings
+from backend.src.core.exceptions import LLMValidationError, EngineProcessingError
 
 logger = logging.getLogger(__name__)
 

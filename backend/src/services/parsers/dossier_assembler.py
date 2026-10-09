@@ -1,8 +1,8 @@
 from pathlib import Path
 from typing import Dict, Any
 import logging
-from src.services.parsers.document_parser import DocumentParser
-from src.services.parsers.spreadsheet_parser import SpreadsheetParser
+from backend.src.services.parsers.document_parser import DocumentParser
+from backend.src.services.parsers.spreadsheet_parser import SpreadsheetParser
 
 logger = logging.getLogger(__name__)
 
