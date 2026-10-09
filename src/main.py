@@ -38,4 +38,4 @@ def create_app() -> FastAPI:
 
 app = create_app()
 
-# O uvicorn chamará esta instância 'app'
+# O uvicorn  chamará esta instância 'app'
