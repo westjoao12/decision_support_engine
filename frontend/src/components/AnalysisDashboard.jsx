@@ -7,7 +7,7 @@ export default function AnalysisDashboard({ projectIds, onReviewProject, onCance
   const [status, setStatus] = useState('PROCESSING'); // PROCESSING, COMPLETED
   const [progress, setProgress] = useState(0);
   const [results, setResults] = useState([]);
-  const [currentAction, setCurrentAction] = useState("Inicializando motor de inferência...");
+  const [currentAction, setCurrentAction] = useState("Inicializando motor de extração...");
 
   // SIMULAÇÃO DO POLLING DO BACKEND (O Mágico de Oz Técnico para a Demo)
   // Num ambiente real, aqui faríamos chamadas fetch() para a nossa API FastAPI (GET /jobs/{job_id}/status)
@@ -20,13 +20,13 @@ export default function AnalysisDashboard({ projectIds, onReviewProject, onCance
       const percentage = Math.floor((currentProgress / total) * 100);
       setProgress(percentage);
 
-      // Feedback visual do que o motor está a fazer (Para impressionar a banca)
+      // Feedback visual do que o motor está a fazer (Terminologia de Governança)
       const actions = [
         "Extraindo metadados relacionais...",
         "Cruzando planilhas de resultados...",
-        "Lendo PDFs via OCR...",
-        "Avaliando incerteza tecnológica (Frascati)...",
-        "Validando governança estrutural...",
+        "Consolidando textos de dossiês...",
+        "Validando critérios do Manual de Frascati...",
+        "Aferindo rastreabilidade estrutural...",
       ];
       setCurrentAction(actions[currentProgress % actions.length]);
 
@@ -103,8 +103,9 @@ export default function AnalysisDashboard({ projectIds, onReviewProject, onCance
                 <CheckCircle className="text-green-500" size={32} />
                 Lote Processado com Sucesso
               </h2>
+              {/* ATUALIZAÇÃO CIRÚRGICA: Remoção do estigma de IA */}
               <p className="text-lg text-bnb-text_muted_light dark:text-bnb-text_muted_dark">
-                A Inteligência Artificial concluiu a extração. Aguardando decisão e assinatura humana.
+                O Motor de Extração consolidou as evidências. Aguardando decisão e assinatura humana.
               </p>
             </div>
             <button 
@@ -130,7 +131,7 @@ export default function AnalysisDashboard({ projectIds, onReviewProject, onCance
                       {proj.projeto_id}
                     </h3>
                     
-                    {/* Badge Visual da IA */}
+                    {/* Badge Visual */}
                     <span className={cn(
                       "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider",
                       proj.classificacao === 'Elegível' 
